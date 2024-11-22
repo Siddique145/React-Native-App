@@ -34,7 +34,7 @@ export default function Dashboard() {
 
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.title}>Welcome to Your Dashboard</Text>
+      <Text style={styles.title}>Welcome to Dashboard</Text>
 
       <Image
         source={{ uri: "https://example.com/your-image-url.jpg" }} // Replace with your own image URL
@@ -42,10 +42,6 @@ export default function Dashboard() {
       />
 
       <View style={styles.content}>
-        <Text style={styles.text}>
-          Here you can manage your account and settings.
-        </Text>
-
         {/* Line chart for data visualization */}
         <View style={styles.chartContainer}>
           <LineChart
@@ -71,10 +67,21 @@ export default function Dashboard() {
             style={{ marginVertical: 8, borderRadius: 16 }}
           />
         </View>
+        <Text style={styles.text}>
+          Welcome to the Admin Dashboard. From here, you can manage users,
+          monitor system performance, and configure application settings. Keep
+          track of all activities, generate reports, and ensure smooth operation
+          of the platform. This centralized hub allows you to perform essential
+          administrative tasks efficiently and effectively. Stay updated with
+          real-time data and make informed decisions to enhance the user
+          experience and optimize system performance.
+        </Text>
 
         {/* Add other dashboard features here */}
         <TouchableOpacity style={styles.button} onPress={handleLogout}>
-          <Text style={styles.buttonText}>Log Out</Text>
+          <Link href={"/signin"}>
+            <Text style={styles.buttonText}>Log Out</Text>
+          </Link>
         </TouchableOpacity>
 
         <Link href="/profile" style={styles.link}>
@@ -95,14 +102,14 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: "bold",
     color: "#333",
-    marginBottom: 20,
+    // marginBottom: 20,
     textAlign: "center",
   },
   image: {
     width: "100%",
     height: 200,
     borderRadius: 12,
-    marginBottom: 30,
+    // marginBottom: 30,
   },
   content: {
     width: "100%",
@@ -110,9 +117,10 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-    color: "#333",
     marginBottom: 20,
     textAlign: "center",
+    color: "#555", // Softer text color
+    lineHeight: 24,
   },
   chartContainer: {
     marginBottom: 40,
