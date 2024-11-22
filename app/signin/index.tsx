@@ -1,13 +1,3 @@
-// import { Text, View } from "react-native";
-
-// export default function Signin() {
-//   return (
-//     <View>
-//       <Text>HEllo This is the login page ok</Text>
-//     </View>
-//   );
-// }
-
 import { Link } from "expo-router";
 import React, { useState } from "react";
 import {

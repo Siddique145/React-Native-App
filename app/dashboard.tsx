@@ -10,19 +10,15 @@ import {
 } from "react-native";
 import { Link } from "expo-router";
 import { LineChart } from "react-native-chart-kit";
-
-// Export options to hide the header for the Dashboard screen
 export const options = {
-  headerShown: false, // Hide the header for the Dashboard screen
+  headerShown: false,
 };
 
 export default function Dashboard() {
   const handleLogout = () => {
     Alert.alert("You have been logged out!");
-    // Add your logout functionality here, e.g., clear tokens or reset navigation
   };
 
-  // Data for the LineChart
   const data = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
     datasets: [
@@ -37,22 +33,21 @@ export default function Dashboard() {
       <Text style={styles.title}>Welcome to Dashboard</Text>
 
       <Image
-        source={{ uri: "https://example.com/your-image-url.jpg" }} // Replace with your own image URL
+        source={{ uri: "https://example.com/your-image-url.jpg" }}
         style={styles.image}
       />
 
       <View style={styles.content}>
-        {/* Line chart for data visualization */}
         <View style={styles.chartContainer}>
           <LineChart
             data={data}
-            width={350} // from react-native
+            width={350}
             height={220}
             chartConfig={{
               backgroundColor: "#e26a00",
               backgroundGradientFrom: "#fb8c00",
               backgroundGradientTo: "#ffa726",
-              decimalPlaces: 2, // Optional, defaults to 2
+              decimalPlaces: 2,
               color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
               labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
               style: {
@@ -77,7 +72,6 @@ export default function Dashboard() {
           experience and optimize system performance.
         </Text>
 
-        {/* Add other dashboard features here */}
         <TouchableOpacity style={styles.button} onPress={handleLogout}>
           <Link href={"/signin"}>
             <Text style={styles.buttonText}>Log Out</Text>
@@ -102,14 +96,12 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: "bold",
     color: "#333",
-    // marginBottom: 20,
     textAlign: "center",
   },
   image: {
     width: "100%",
     height: 200,
     borderRadius: 12,
-    // marginBottom: 30,
   },
   content: {
     width: "100%",
@@ -119,7 +111,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginBottom: 20,
     textAlign: "center",
-    color: "#555", // Softer text color
+    color: "#555",
     lineHeight: 24,
   },
   chartContainer: {
